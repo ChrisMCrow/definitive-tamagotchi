@@ -20,6 +20,7 @@ function TamaBody(props) {
           background-size: 350px;
           background-repeat: no-repeat;
           height: 210px;
+          text-align: left;
         }
         .dead-img {
           width: 200px;

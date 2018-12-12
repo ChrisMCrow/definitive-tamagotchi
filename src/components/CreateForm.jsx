@@ -19,7 +19,7 @@ function CreateForm(props) {
         }
       `}</style>
       <form onSubmit={handleFormSubmit}>
-        <input type="text" ref={(input)=>{_newTamaName=input;}}/>
+        <input className='form-control' type="text" ref={(input)=>{_newTamaName=input;}}/>
         <button className='btn btn-success' type='submit'>Name your Tamagotchi!</button>
       </form>
     </div>

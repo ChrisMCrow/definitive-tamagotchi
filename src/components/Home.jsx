@@ -6,7 +6,7 @@ import Egg from './assets/egg.png';
 
 function Home(props) {
   return (
-    <div>
+    <div className='egg-page'>
       <style jsx>{`
         .egg-page {
           text-align: center;
@@ -14,12 +14,12 @@ function Home(props) {
         }
       `}</style>
       {props.tamagotchi.name ? (
-        <div className='egg-page'>
+        <div>
           <Link to='/detail'><img src={Egg} /></Link>
           <h2>Click the egg to hatch {props.tamagotchi.name}</h2>
         </div>
       ) : (
-        <div className='egg-page'>
+        <div>
           <CreateForm onNewTama={props.onNewTama} />
         </div>
       )}

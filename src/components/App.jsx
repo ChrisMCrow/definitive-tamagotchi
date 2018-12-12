@@ -38,6 +38,7 @@ class App extends React.Component {
     this.handleFlush = this.handleFlush.bind(this);
     this.handleStats = this.handleStats.bind(this);
     this.handleDiscipline = this.handleDiscipline.bind(this);
+    this.handleResetGame = this.handleResetGame.bind(this);
   }
 
   componentDidMount() {
@@ -235,12 +236,27 @@ class App extends React.Component {
       this.setState({masterTama: newTama});
     }
   }
+
+  handleResetGame() {
+    console.log('activated at app');
+    let newTama = Object.assign({}, this.state.masterTama);
+    newTama.name = null;
+    this.setState({masterTama: newTama});
+  }
   
   render() {
     return (
-      <div className='container'>
+      <div className='container wrapper'>
+        <style jsx global>{`
+          body {
+            background-color: lightblue;
+          }
+        `}</style>
         <style jsx>{`
-          font-family: Helvetica;
+          .app-contents {
+            display: inline-block;
+            width: 500px;
+          }
 
           #logo {
             z-index: 1;
@@ -248,23 +264,31 @@ class App extends React.Component {
           
           img#logo {
             width: 500px;
-            margin: 20px auto 20px auto;
+            margin: 20px auto;
           }
+
+          .wrapper {
+            text-align: center;
+          }
+
         `}</style>
-        <img src={logo} id='logo'/>
-        <Switch>
-          <Route exact path='/' render={() => <Home onNewTama = {this.handleNewTama} tamagotchi={this.state.masterTama}/>} />
-          <Route path='/detail' render={() => <TamaDetail 
-            tamagotchi={this.state.masterTama}
-            onFeed={this.handleFeed}
-            onSleep={this.handleSleep}
-            onPlay={this.handlePlay}
-            onHeal={this.handleHeal}
-            onFlush={this.handleFlush}
-            onStats={this.handleStats}
-            onDiscipline={this.handleDiscipline}
-          />} />
-        </Switch>
+        <div className='app-contents'>
+          <img src={logo} id='logo'/>
+          <Switch>
+            <Route exact path='/' render={() => <Home onNewTama = {this.handleNewTama} tamagotchi={this.state.masterTama}/>} />
+            <Route path='/detail' render={() => <TamaDetail 
+              tamagotchi={this.state.masterTama}
+              onFeed={this.handleFeed}
+              onSleep={this.handleSleep}
+              onPlay={this.handlePlay}
+              onHeal={this.handleHeal}
+              onFlush={this.handleFlush}
+              onStats={this.handleStats}
+              onDiscipline={this.handleDiscipline}
+              onResetGame={this.handleResetGame}
+            />} />
+          </Switch>
+        </div>
       </div>
     );
   }

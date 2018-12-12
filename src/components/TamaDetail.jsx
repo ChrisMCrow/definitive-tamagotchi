@@ -4,13 +4,19 @@ import TopMenu from './TopMenu';
 import TamaBody from './TamaBody';
 import BottomMenu from './BottomMenu';
 import TamaShell from './assets/tamashell.png';
+import { Link } from 'react-router-dom';
 
 function TamaDetail(props) {
+  function handleReset() {
+    props.onResetGame();
+  }
   return(
     <div id='tama-detail-container'>
       <style jsx>{`
         #tama-detail-container {
           position: relative;
+          margin: -200px -150px;
+          z-index: 0;
         }
         #tama-shell {
           margin: 50px 0;
@@ -44,6 +50,9 @@ function TamaDetail(props) {
           tamagotchi={props.tamagotchi}
         />
       </div>
+      <Link to='/'>
+        <button onClick={handleReset} className='btn btn-success'>Reset Game</button>
+      </Link>
     </div>
   );
 }
@@ -56,7 +65,8 @@ TamaDetail.propTypes = {
   onHeal: PropTypes.func,
   onFlush: PropTypes.func,
   onStats: PropTypes.func,
-  onDiscipline: PropTypes.func
+  onDiscipline: PropTypes.func,
+  onResetGame: PropTypes.func
 };
 
 export default TamaDetail;
