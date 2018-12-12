@@ -11,7 +11,7 @@ class App extends React.Component {
     this.state = {
       masterTama: 
       {
-        name: 'Melagotchi',
+        name: null,
         foodLevel: 100,
         sleepLevel: 100,
         isSleeping: false,
@@ -243,10 +243,12 @@ class App extends React.Component {
           font-family: Helvetica;
 
           #logo {
-            width: 500px;
-            margin-left: 40px;
-            margin-bottom: -180px;
             z-index: 1;
+          }
+          
+          img#logo {
+            width: 500px;
+            margin: 20px auto 20px auto;
           }
         `}</style>
         <img src={logo} id='logo'/>

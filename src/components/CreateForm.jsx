@@ -12,10 +12,15 @@ function CreateForm(props) {
   }
 
   return(
-    <div>
+    <div id='form-wrapper'>
+      <style jsx>{`
+        #form-wrapper input {
+          margin: 10px;
+        }
+      `}</style>
       <form onSubmit={handleFormSubmit}>
         <input type="text" ref={(input)=>{_newTamaName=input;}}/>
-        <button className='btn btn-success' type='submit'>Create New Tamagotchi!</button>
+        <button className='btn btn-success' type='submit'>Name your Tamagotchi!</button>
       </form>
     </div>
   );
