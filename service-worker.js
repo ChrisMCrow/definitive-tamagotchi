@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "chrismcrow.github.io/definitive-tamagotchi/precache-manifest.d0719076cf9dfd9ad17d038ef8cb1fdf.js"
+  "/definitive-tamagotchi/precache-manifest.b10cc0c9b972df44cdc91f446038eaaa.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("chrismcrow.github.io/definitive-tamagotchi/index.html", {
+workbox.routing.registerNavigationRoute("/definitive-tamagotchi/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
