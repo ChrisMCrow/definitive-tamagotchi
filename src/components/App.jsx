@@ -238,9 +238,23 @@ class App extends React.Component {
   }
 
   handleResetGame() {
-    console.log('activated at app');
     let newTama = Object.assign({}, this.state.masterTama);
     newTama.name = null;
+    newTama.foodLevel = 100;
+    newTama.sleepLevel = 100;
+    newTama.isSleeping = false;
+    newTama.isRestless = false;
+    newTama.happiness = 100;
+    newTama.isSick = false;
+    newTama.isPoopy = false;
+    newTama.displayStats = false;
+    newTama.weight = '1 lbs';
+    newTama.age = 0;
+    newTama.isBad = false;
+    newTama.disciplineLevel = 50;
+    newTama.alert = false;
+    newTama.isDead = false;
+    newTama.id = 0;
     this.setState({masterTama: newTama});
   }
   
